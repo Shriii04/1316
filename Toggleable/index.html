@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Tabs</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        /* Custom styles for the navigation bar */
+        .nav-tabs {
+            background-color: #007bff;
+            border-radius: 5px;
+            padding: 10px 0;
+        }
+
+        .nav-tabs .nav-item .nav-link {
+            color: #fff;
+            font-weight: bold;
+            border: none;
+            border-radius: 0;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        .nav-tabs .nav-item .nav-link:hover {
+            background-color: #0056b3;
+        }
+
+        .nav-tabs .nav-item .nav-link.active {
+            background-color: #fff;
+            color: #007bff;
+            border-radius: 5px 5px 0 0;
+        }
+
+        /* Custom styles for the tab content */
+        .tab-content {
+            background-color: #f7f7f7;
+            padding: 20px;
+            border-radius: 0 0 5px 5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Custom font and spacing for content */
+        .tab-pane p {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul class="nav nav-tabs" id="projectTabs" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link active" id="sdp-tab" data-toggle="tab" href="#sdp" role="tab" aria-controls="sdp" aria-selected="true">SDP</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="edi-tab" data-toggle="tab" href="#edi" role="tab" aria-controls="edi" aria-selected="false">EDI</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="dt-tab" data-toggle="tab" href="#dt" role="tab" aria-controls="dt" aria-selected="false">DT</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="course-tab" data-toggle="tab" href="#course" role="tab" aria-controls="course" aria-selected="false">Course Projects</a>
+            </li>
+        </ul>
+    </nav>
+    
+    <div class="tab-content" id="projectTabContent">
+        <div class="tab-pane fade show active" id="sdp" role="tabpanel" aria-labelledby="sdp-tab">
+            <!-- SDP project content goes here -->
+            <p>This is the content for the SDP project.</p>
+        </div>
+        <div class="tab-pane fade" id="edi" role="tabpanel" aria-labelledby="edi-tab">
+            <!-- EDI project content goes here -->
+            <p>This is the content for the EDI project.</p>
+        </div>
+        <div class="tab-pane fade" id="dt" role="tabpanel" aria-labelledby="dt-tab">
+            <!-- DT project content goes here -->
+            <p>This is the content for the DT project.</p>
+        </div>
+        <div class="tab-pane fade" id="course" role="tabpanel" aria-labelledby="course-tab">
+            <!-- Course projects content goes here -->
+            <p>This is the content for the Course projects.</p>
+        </div>
+    </div>
+    
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            $('#projectTabs a').on('click', function (e) {
+                e.preventDefault()
+                $(this).tab('show')
+            })
+        })
+    </script>
+    
+</body>
+</html>
